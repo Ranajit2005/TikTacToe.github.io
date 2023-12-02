@@ -12,6 +12,7 @@ let gameOver = false;
 //pull element by DOM
 let cellElement = document.querySelectorAll(".cell");
 let res = document.getElementById("result");
+
 cellElement.forEach((cell,index)=>{
     cell.addEventListener("click" ,()=>{    // It is used to interact to user, here we use click(or we can use "mousedown"/"on cick"etc) and then call a function.
         plceMarker(index);
@@ -56,6 +57,7 @@ function chechResult(){
             return;
         }
     }
+    
     //check diagonal wise winner 
     let dieSum1 = boardData[0][0] + boardData[1][1] + boardData[2][2];
     let dieSum2 = boardData[0][2] + boardData[1][1] + boardData[2][0];
@@ -66,6 +68,7 @@ function chechResult(){
         endGame(2);
         return;
     }
+
     //for tie condition
     if(boardData[0].indexOf(0)==-1 && boardData[1].indexOf(0)==-1 && boardData[2].indexOf(0)==-1){
         endGame(0);
@@ -76,6 +79,7 @@ function chechResult(){
 function endGame(winner){
     // here we trigger
     gameOver = true;
+
     //check if the game is tie
     if(winner == 0){
         res.innerText = "It's a tie match ";
@@ -85,6 +89,7 @@ function endGame(winner){
 }
 
 let rst = document.getElementById("restart");
+
 rst.addEventListener("click",()=>{
     //Reset game variable
     boardData=[
@@ -94,10 +99,12 @@ rst.addEventListener("click",()=>{
     ]
     player = 1;
     gameOver = false;
+
     //Reset board
     cellElement.forEach(cell =>{
         cell.classList.remove("cross","circle");
     })
+
     //To remove tie or winner nane
     res.innerText = "";
 });
