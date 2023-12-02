@@ -98,5 +98,6 @@ rst.addEventListener("click",()=>{
     cellElement.forEach(cell =>{
         cell.classList.remove("cross","circle");
     })
+    //To remove tie or winner nane
     res.innerText = "";
 });
