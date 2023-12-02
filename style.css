@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 3 rem;
+}
+
+.board{
+    height: 350px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    background-image: url(download\ \(1\).png);
+    background-size: cover;
+    border: 3px solid black;
+    border-radius: 3rem;
+    box-shadow: 0 0 15px 15px rgba(50, 50, 50, 0.5);
+}
+
+.board:hover{
+    cursor: pointer;
+}
+
+.circle{
+    background-image: url(circle.png);
+}
+
+.cross{
+    background-image: url(cross.png);
+}
+
+.circle,
+.cross{
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3rem;
+}
+
+#result{
+    height: 3rem;
+    font-size: 3 rem;
+    color: rgb(34, 0, 255);
+    text-align: center;
+}
+
+button{
+    background-color: rgb(161, 255, 67);
+    border: 3px solid black;
+    /* border: none; */
+    border-radius: 50px;
+    font-size: 1.5rem;
+    padding: 1 rem 1 rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(81, 160, 2)
+}
